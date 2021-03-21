@@ -1,10 +1,152 @@
 @import "../mixins/media";
 
-header {
-    width: 220px;
-    background-color: red;
+.header {
 
-    @include media-tablet {
-        width: 500px;
+  &_top {
+    display: flex;
+    align-items: center;
+    padding: 14px 30px;
+    background: $black;
+  }
+
+  .logo {
+    width: 186px;
+    margin-left: 30px;
+    flex-shrink: 0;
+
+    &-img {
+      cursor: pointer;
+      transition: 0.2s;
+
+      svg {
+        fill: $white;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
+  }
+
+  &_menu {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+    margin-left: 10%;
+    margin-right: auto;
+  }
+
+  &_search {
+    display: flex;
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  &_phone {
+    margin-left: 24px;
+  }
+
+  &_phone-link {
+    font-size: 24px;
+    color: $white;
+    font-weight: 500;
+    transition: 0.2s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &_bottom-line {
+    position: relative;
+  }
+
+  &_bottom-cart {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.cart {
+  display: flex;
+  width: 106px;
+  align-items: center;
+  justify-content: center;
+  background: $pink;
+  cursor: pointer;
+
+  &:hover {
+    color: $white;
+
+    svg {
+      fill: $white
+    }
+  }
+
+  &_counter {
+    margin-top: 2px;
+    margin-right: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+
+  svg {
+    width: 21px;
+    fill: $black;
+    transition: 0.2s;
+  }
+}
+
+.main-menu {
+
+  &_list {
+    display: flex;
+    align-items: center;
+  }
+
+  &_item {
+    margin-right: 24px;
+  }
+
+  &_link {
+    padding: 12px;
+    font-size: 22px;
+    color: $white;
+    text-transform: lowercase;
+    font-weight: 600;
+    transition: 0.2s;
+
+    &.active,
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.catalog-menu {
+
+  &_tumbler {
+    display: flex;
+    padding: 12px 0 16px;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    line-height: 0.8em;
+    font-weight: 500;
+    text-transform: lowercase;
+    color: $white;
+    transition: 0.2s;
+    background: linear-gradient(to right, $orange, $pink, $purple);
+    cursor: pointer;
+
+    &:hover {
+      color: $black;
+    }
+  }
 }

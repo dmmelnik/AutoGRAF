@@ -1,2 +1,34 @@
-header
-  p Header
+-const main_menu = ['О магазине', 'Оплата и доставка', 'Сервис', 'Видео', 'Контакты']
+-const catalog_menu = ['Пневматические краскопульты','Ремонтные комплекты','Красконагнетательные баки','Воздушные головы','Безвоздушные краскопульты','Подающие насосы','Сопла и иглы','Автоматические распылители','Окрасочне установки','Шланги и бачки','Электростатические распылители','Фильтры подготовки воздуха','Окрасочные установки']
+
+header.header
+  div.header_top
+    div.logo
+      a(href='/').logo-img
+        include ../../img/logo.svg
+    div.header_menu
+      div.main-menu
+        nav
+          div.main-menu_burger
+          ul.main-menu_list
+            each val in main_menu
+              li.main-menu_item
+                a.main-menu_link(href='#')= val
+      div.header_search
+        include ../../img/search.svg
+
+    div.header_phone
+      a.header_phone-link(href='tel:8(812)6666666') 8 (812) 666 66 66
+  div.header_bottom
+    div.header_bottom-line
+      div.catalog-menu_tumbler Каталог
+      div.header_bottom-cart.cart
+        span.cart_counter 2
+        include ../../img/cart.svg
+    div.catalog-menu
+      nav
+        ul.catalog-menu_list
+          each val in catalog_menu
+            li.catalog-menu_item
+              a.catalog-menu_link(href='#')= val
+

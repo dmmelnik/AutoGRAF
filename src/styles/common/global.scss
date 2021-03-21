@@ -13,7 +13,7 @@
 
 body {
   margin: 0;
-  font: 14px/1.6 'Roboto', sans-serif;
+  font: 14px/1.6 'TTNorms', sans-serif;
   font-weight: 400;
   color: #202020;
   background: #fff;
@@ -27,6 +27,7 @@ img {
 ul, ol {
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
 a {
