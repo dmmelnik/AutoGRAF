@@ -14,16 +14,19 @@
     margin-left: 30px;
     flex-shrink: 0;
 
-    &-img {
-      cursor: pointer;
+    &-img svg {
+      fill: $white;
       transition: 0.2s;
+    }
 
-      svg {
-        fill: $white;
-      }
+    a.logo-img {
+      cursor: pointer;
+
 
       &:hover {
-        opacity: 0.8;
+        svg {
+          fill: $primary;
+        }
       }
     }
   }
@@ -62,19 +65,34 @@
 
   &_bottom-line {
     position: relative;
+    width: 50%;
+
+    @include media-custom(500px) {
+      width: 100%;
+    }
   }
 
   &_bottom-cart {
     position: absolute;
-    right: 0;
+    left: 100%;
     top: 0;
     bottom: 0;
+    width: 100%;
+
+    @include media-custom(500px) {
+      right: 0;
+      left: auto;
+      width: 106px;
+
+      .cart_text {
+        display: none;
+      }
+    }
   }
 }
 
 .cart {
   display: flex;
-  width: 106px;
   align-items: center;
   justify-content: center;
   background: $pink;
@@ -86,6 +104,14 @@
     svg {
       fill: $white
     }
+  }
+
+  &_text {
+    margin-right: 24px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: lowercase;
+    display: block;
   }
 
   &_counter {
@@ -130,6 +156,13 @@
 }
 
 .catalog-menu {
+  display: none;
+  border-top: 1px solid $black;
+  background: linear-gradient(135deg, #ff3535, $pink 40%, $pink 80%, #9d0a63);
+
+  @include media-custom(500px) {
+    background: linear-gradient(to right, $orange, $pink, $purple);
+  }
 
   &_tumbler {
     display: flex;
@@ -147,6 +180,61 @@
 
     &:hover {
       color: $black;
+    }
+  }
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: none;
+    justify-content: flex-end;
+    padding: 30px 0;
+
+    @include media-tablet-horizontal {
+      margin: 0 -23px;
+    }
+
+    @include media-laptop {
+      padding: 56px 0;
+    }
+  }
+
+  &_item {
+    width: 100%;
+    padding: 6px 0;
+
+    @include media-tablet-horizontal {
+      width: 50%;
+      padding: 12px 9px;
+    }
+
+    @include media-laptop {
+      width: 33.333%;
+    }
+  }
+
+  &_link {
+    padding: 2px 6px 5px;
+    font-size: 16px;
+    line-height: 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    color: $black;
+    border-radius: 14px;
+    transition: 0.2s;
+
+    @include media-custom(500px) {
+      padding: 2px 14px 5px;
+    }
+
+    @include media-tablet-horizontal {
+      font-size: 18px;
+    }
+
+    &.active,
+    &:hover {
+      color: $white;
+      background: $black;
     }
   }
 }

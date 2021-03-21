@@ -21,14 +21,15 @@ header.header
       a.header_phone-link(href='tel:8(812)6666666') 8 (812) 666 66 66
   div.header_bottom
     div.header_bottom-line
-      div.catalog-menu_tumbler Каталог
+      div.catalog-menu_tumbler.tumbler(data-target='catalog-menu') Каталог
       div.header_bottom-cart.cart
+        span.cart_text Корзина
         span.cart_counter 2
         include ../../img/cart.svg
     div.catalog-menu
-      nav
+      nav.page-width
         ul.catalog-menu_list
           each val in catalog_menu
             li.catalog-menu_item
               a.catalog-menu_link(href='#')= val
-
+  div.page-width
