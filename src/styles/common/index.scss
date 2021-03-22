@@ -95,6 +95,7 @@
   &_show-more {
     display: flex;
     height: 56px;
+    margin-bottom: 42px;
     align-items: center;
     justify-content: center;
     font-size: 16px;
@@ -183,6 +184,69 @@
     svg {
       fill: #c2c2c2;
       fill-rule: evenodd;
+      transition: 0.2s;
+    }
+  }
+}
+
+.video {
+  overflow: hidden;
+
+  &_container {
+    overflow: hidden;
+  }
+
+  &_list {
+    display: flex;
+    max-width: none;
+    align-items: center;
+    margin: -22px;
+  }
+
+  &_item-wrap {
+    width: 50%;
+    padding: 22px;
+  }
+
+  &_item {
+    position: relative;
+    padding-top: 78%;
+    border-radius: 14px;
+    overflow: hidden;
+    background: $black;
+    cursor: pointer;
+
+    &:hover {
+      .video_image {
+        opacity: 0.5;
+      }
+
+      svg {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &_image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    transition: 0.2s;
+  }
+
+  &_icon {
+    position: absolute;
+    display: flex;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate(180deg);
+
+    svg {
+      fill: $white;
       transition: 0.2s;
     }
   }
