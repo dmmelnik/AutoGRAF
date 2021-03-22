@@ -1,0 +1,69 @@
+@import "../mixins/media";
+
+.main-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 80px;
+}
+
+.main-column {
+
+}
+
+.card {
+
+  &_list {
+    display: flex;
+    max-width: none;
+    flex-wrap: wrap;
+    margin: -22px -15px;
+  }
+
+  &_item-wrapper {
+    width: 50%;
+    padding: 22px 15px;
+  }
+
+  &_item {
+  }
+
+  &_image {
+    display: block;
+    padding-top: 100%;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &_content {
+    display: flex;
+    align-items: center;
+    padding: 30px 24px;
+    background: $white;
+  }
+
+  &_title {
+    flex-grow: 1;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2em;
+    color: $black;
+    transition: 0.2s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &_price {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1em;
+    flex-shrink: 0;
+    width: 100px;
+    text-align: right;
+  }
+}
