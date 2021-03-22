@@ -1,6 +1,5 @@
-import $ from '../local_modules/jquery/dist/jquery.min'
-
 $(document).ready(() => {
+  'use strict'
   $(document).on('click', '.tumbler', function (event) {
     const $elem = $(event.target).hasClass('tumbler')
       ? $(event.target)
@@ -27,4 +26,6 @@ $(document).ready(() => {
     e.stopPropagation()
     e.stopImmediatePropagation()
   })
+
+  $('.slider').slick()
 })
