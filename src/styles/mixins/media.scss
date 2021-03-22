@@ -14,6 +14,13 @@
     }
 }
 
+@mixin media-s-laptop {
+
+    @media (min-width: $mediaWidthSmallLaptop) {
+        @content;
+    }
+}
+
 @mixin media-laptop {
 
     @media (min-width: $mediaWidthLaptop) {

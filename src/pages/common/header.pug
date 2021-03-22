@@ -3,22 +3,37 @@
 
 header.header
   div.header_top
-    div.logo
-      a(href='/').logo-img
-        include ../../img/logo.svg
+    div.main-menu_burger.tumbler(data-target='main-menu_container')
+      span
+      span
+      span
     div.header_menu
       div.main-menu
-        nav
-          div.main-menu_burger
-          ul.main-menu_list
-            each val in main_menu
-              li.main-menu_item
-                a.main-menu_link(href='#')= val
+        div.main-menu_container
+          nav
+            ul.main-menu_list
+              each val in main_menu
+                li.main-menu_item
+                  a.main-menu_link(href='#')= val
+          div.header_phone-mobile
+            a.header_phone-mobile-link(href='tel:8(812)6666666')
+              span.header_phone-mobile-icon
+                include ../../img/phone.svg
+              div.header_phone-mobile-text 8 (812) 666 66 66
+
       div.header_search
         include ../../img/search.svg
 
+    div.header_search.header_search-mobile
+      include ../../img/search.svg
+
+    div.logo
+      a(href='/').logo-img
+        include ../../img/logo.svg
+
     div.header_phone
       a.header_phone-link(href='tel:8(812)6666666') 8 (812) 666 66 66
+
   div.header_bottom
     div.header_bottom-line
       div.catalog-menu_tumbler.tumbler(data-target='catalog-menu') Каталог
@@ -26,10 +41,10 @@ header.header
         span.cart_text Корзина
         span.cart_counter 2
         include ../../img/cart.svg
+
     div.catalog-menu
       nav.page-width
         ul.catalog-menu_list
           each val in catalog_menu
             li.catalog-menu_item
               a.catalog-menu_link(href='#')= val
-  div.page-width

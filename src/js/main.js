@@ -9,7 +9,7 @@ $(document).ready(() => {
     const $target = $('.' + targetClass)
     const $body = $('body')
 
-    if ($target !== undefined) {
+    if ($target !== undefined && !$body.hasClass('tumbler-active')) {
       $body.toggleClass('tumbler-active')
       $elem.toggleClass('pressed')
       $target.slideToggle().toggleClass('untouchable')
@@ -25,5 +25,6 @@ $(document).ready(() => {
     $('.tumbler-active').removeClass('tumbler-active')
     $('.untouchable').slideUp().removeClass('untouchable')
     e.stopPropagation()
+    e.stopImmediatePropagation()
   })
 })

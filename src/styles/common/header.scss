@@ -5,14 +5,33 @@
   &_top {
     display: flex;
     align-items: center;
-    padding: 14px 30px;
-    background: $black;
+    padding: 14px 30px 0;
+    flex-wrap: wrap;
+    background: #1a1a1a;
+
+    @include media-s-laptop {
+      padding: 14px 30px;
+      flex-wrap: nowrap;
+      background: $black;
+    }
   }
 
   .logo {
-    width: 186px;
-    margin-left: 30px;
+    width: 130px;
     flex-shrink: 0;
+    margin: 0 auto;
+
+    @include media-tablet {
+      width: 186px;
+    }
+
+    @include media-laptop {
+      margin: 0 0 0 30px;
+    }
+
+    @include media-s-laptop {
+      order: -1;
+    }
 
     &-img svg {
       fill: $white;
@@ -33,15 +52,36 @@
 
   &_menu {
     display: flex;
+    padding-top: 14px;
     align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    flex-grow: 1;
-    margin-left: 10%;
-    margin-right: auto;
+    order: 4;
+    width: 100%;
+
+    @include media-s-laptop {
+      width: auto;
+      padding: 0;
+      flex-grow: 1;
+      order: unset;
+    }
   }
 
   &_search {
-    display: flex;
+    display: none;
+
+    @include media-s-laptop {
+      display: flex;
+    }
+
+    &-mobile {
+      display: flex;
+      order: 3;
+
+      @include media-s-laptop {
+        display: none;
+      }
+    }
 
     svg {
       fill: $white;
@@ -49,9 +89,25 @@
   }
 
   &_phone {
-    margin-left: 24px;
+    display: none;
+
+    @include media-s-laptop {
+      display: block;
+    }
   }
 
+  &_phone-mobile {
+    display: flex;
+    background: $gray;
+    justify-content: center;
+    padding: 12px 0;
+
+    @include media-s-laptop {
+      display: none;
+    }
+  }
+
+  &_phone-mobile-link,
   &_phone-link {
     font-size: 24px;
     color: $white;
@@ -60,6 +116,36 @@
 
     &:hover {
       color: $primary;
+
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+
+  &_phone-mobile-link {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_phone-mobile-icon {
+    display: flex;
+    width: 21px;
+    margin-right: 30px;
+
+    svg {
+      transition: 0.2s;
+      fill: $white;
+    }
+  }
+
+  &_bottom-line {
+    border-top: 1px solid $white;
+
+    @include media-custom(500px) {
+      border: none;
     }
   }
 
@@ -130,14 +216,120 @@
 }
 
 .main-menu {
+  margin: 0 -30px;
+  max-width: none;
+  flex-grow: 1;
+
+  @include media-s-laptop {
+    flex-grow: unset;
+    border: none;
+    margin: 0;
+  }
+
+  &_container {
+    display: none;
+    padding-top: 30px;
+    border-top: 1px solid $white;
+
+    @include media-s-laptop {
+      display: block !important;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &_burger {
+    width: 24px;
+    height: 20px;
+    position: relative;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    @include media-s-laptop {
+      display: none;
+    }
+
+    & span {
+      display: block;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background: $white;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 8px;
+      }
+
+      &:nth-child(3) {
+        top: 16px;
+      }
+    }
+
+    &.pressed span {
+      &:nth-child(1) {
+        top: 8px;
+        transform: rotate(135deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+        left: 60px;
+      }
+
+      &:nth-child(3) {
+        top: 8px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
 
   &_list {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-direction: column;
+
+    @include media-tablet {
+      flex-direction: row;
+    }
+
+    @include media-s-laptop {
+      margin-top: -6px;
+      margin-bottom: 0;
+      justify-content: unset;
+    }
   }
 
   &_item {
-    margin-right: 24px;
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media-tablet {
+      margin-right: 18px;
+      margin-bottom: 0;
+    }
+
+    @include media-laptop {
+      margin-right: 24px;
+    }
   }
 
   &_link {
@@ -157,10 +349,12 @@
 
 .catalog-menu {
   display: none;
-  border-top: 1px solid $black;
+  overflow: hidden;
+  border-top: 1px solid $white;
   background: linear-gradient(135deg, #ff3535, $pink 40%, $pink 80%, #9d0a63);
 
   @include media-custom(500px) {
+    border-top: 1px solid $black;
     background: linear-gradient(to right, $orange, $pink, $purple);
   }
 
