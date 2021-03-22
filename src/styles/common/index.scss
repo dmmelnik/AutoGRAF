@@ -7,7 +7,6 @@
 }
 
 .main-column {
-
 }
 
 .card {
@@ -25,6 +24,7 @@
   }
 
   &_item {
+    box-shadow: 0 0 10px -6px rgba(0,0,0, 0.2);
   }
 
   &_image {
@@ -40,8 +40,9 @@
 
   &_content {
     display: flex;
+    height: 128px;
     align-items: center;
-    padding: 30px 24px;
+    padding: 12px 24px;
     background: $white;
   }
 
@@ -65,5 +66,124 @@
     flex-shrink: 0;
     width: 100px;
     text-align: right;
+  }
+}
+
+.sale {
+  padding: 40px;
+  border-top: 5px solid $orange;
+  background: $white;
+
+  &_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_title {
+    font-size: 20px;
+    font-weight: 600;
+    color: $black;
+  }
+
+  &_counter {
+    font-size: 20px;
+    font-weight: 600;
+    color: #c3c3c3;
+  }
+
+  &_show-more {
+    display: flex;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: $white;
+    background: $black;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      color: $primary;
+    }
+
+    svg {
+      width: 15px;
+      margin-left: 20px;
+      transform: rotate(-90deg);
+      fill: none;
+      stroke: $primary;
+      stroke-width: 3px;
+    }
+  }
+}
+
+.card-small {
+
+  &_list {
+    margin: 56px 0 20px;
+  }
+
+  &_item {
+    display: flex;
+    height: 90px;
+    align-items: center;
+    box-shadow: 0 0 4px 0 rgba(0,0,0, 0.2);
+  }
+
+  &_image {
+    display: block;
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    transition: 0.2s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &_title {
+    margin-left: 40px;
+    margin-right: auto;
+    font-size: 15px;
+    line-height: 1.2em;
+    font-weight: 600;
+    color: $black;
+    transition: 0.2s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &_price {
+    width: 120px;
+    margin-left: 24px;
+    margin-right: 4%;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: right;
+    letter-spacing: 1px;
+    color: $black;
+  }
+
+  &_cart {
+    display: flex;
+    width: 28px;
+    margin-right: 4%;
+    cursor: pointer;
+
+    &:hover svg {
+      fill: $primary;
+    }
+
+    svg {
+      fill: #c2c2c2;
+      fill-rule: evenodd;
+      transition: 0.2s;
+    }
   }
 }
