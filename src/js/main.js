@@ -1,5 +1,4 @@
 $(document).ready(() => {
-  'use strict'
   $(document).on('click', '.tumbler', function (event) {
     const $elem = $(event.target).hasClass('tumbler')
       ? $(event.target)
@@ -27,5 +26,15 @@ $(document).ready(() => {
     e.stopImmediatePropagation()
   })
 
-  $('.slider').slick()
+
+  $('.main-slider').slick({
+    adaptiveHeight: true,
+    prevArrow: '.main-slider_arrow-prev',
+    nextArrow: '.main-slider_arrow-next',
+    dots: true,
+    customPaging: () => {
+      return '<div class="main-slider_dot"></div>'
+    },
+    infinite: true
+  })
 })
