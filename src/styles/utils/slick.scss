@@ -110,7 +110,11 @@
 .main-slider {
 
   &_outside {
-    margin-bottom: 100px;
+    margin-bottom: 40px;
+
+    @include media-s-laptop {
+      margin-bottom: 100px;
+    }
   }
 
   &_container {
