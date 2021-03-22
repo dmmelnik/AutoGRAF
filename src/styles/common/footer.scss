@@ -1,2 +1,21 @@
+@import "../mixins/media";
+
 .footer {
+  padding: 15px 0;
+  background: $lightgray;
+}
+
+.footer-menu {
+
+  &_list {
+    margin: 0;
+    justify-content: center;
+  }
+
+  &_link {
+    &.active,
+    &:hover {
+      color: $black;
+    }
+  }
 }

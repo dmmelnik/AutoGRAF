@@ -1,2 +1,9 @@
-footer
-    p Footer
+-const footer_menu = ['О магазине', 'Оплата и доставка', 'Сервис', 'Видео', 'Контакты']
+
+footer.footer
+    div.footer-menu
+      nav
+        ul.main-menu_list.footer-menu_list
+          each val in footer_menu
+            li.main-menu_item
+              a.main-menu_link.footer-menu_link(href='#')= val
